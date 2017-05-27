@@ -61,8 +61,9 @@ module.exports = function (options) {
      * See: http://webpack.github.io/docs/configuration.html#entry
      */
     entry: {
-  'polyfills': './src/polyfills.browser.ts',
+ 'polyfills': './src/polyfills.browser.ts',
   'twbs':      'bootstrap-loader',
+  'fa':        'font-awesome-sass-loader!./config/font-awesome.config.js',
   'main':      AOT ? './src/main.browser.aot.ts' :
                './src/main.browser.ts'
 },
@@ -229,20 +230,13 @@ module.exports = function (options) {
 /*
  * Font loaders, required for font-awesome-sass-loader and bootstrap-loader
  */
-{
-  test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-  loader: "url-loader?limit=10000&mimetype=application/font-woff"
-},
-{
-  test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-  loader: "file-loader"
-},
 
-
-
-      ],
+ { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
+      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
+],
 
     },
+   
 
     /**
      * Add additional plugins to the compiler.
