@@ -1,4 +1,6 @@
 <div>
+  
+  <hr>
   <h1 x-large class="sample-content">Your Content Here</h1>
 
   <hr>
@@ -39,7 +41,7 @@
 <div>
 
     <accordion>
-      <accordion-group heading="Static Header, initially expanded">
+      <accordion-group heading="Static Header, initially expanded" [isOpen]="true">
         This content is straight in the template.
       </accordion-group>
       <accordion-group #group>
@@ -50,7 +52,7 @@
         </div>
         This is just some content to illustrate fancy headings.
       </accordion-group>
-      <accordion-group heading="Content 1">
+      <accordion-group heading="Content 1" [isDisabled]="true">
         <p>Content 1</p>
       </accordion-group>
       <accordion-group heading="Content 2">
