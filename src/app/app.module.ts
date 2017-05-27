@@ -30,6 +30,10 @@ import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+// RECOMMENDED (doesn't work with system.js)
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+// or
+//import { AccordionModule } from 'ngx-bootstrap';
 
 //import '../styles/styles.scss';
 //import '../styles/headings.css';
@@ -66,7 +70,8 @@ type StoreType = {
     FormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+  AccordionModule.forRoot()
   ],
   /**
    * Expose our Services and Providers into Angular's dependency injection.

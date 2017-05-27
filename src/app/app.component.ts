@@ -20,7 +20,7 @@ import { AppState } from './app.service';
 //  ],
   template: `
 
-  <!--http://valor-software.com/ngx-bootstrap/#/ -->
+  <!--Details for components see: http://valor-software.com/ngx-bootstrap/#/ -->
     
 
     <div class="btn-group" dropdown>
