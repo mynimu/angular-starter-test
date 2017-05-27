@@ -32,6 +32,9 @@ import { XLargeDirective } from './home/x-large';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 
+import { ChartsModule } from 'ng2-charts';
+import { PieChartDemoComponent } from './components/charts/pie-chart-demo';
+
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
@@ -65,7 +68,8 @@ type StoreType = {
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
     BsDropdownModule.forRoot(),
-  AccordionModule.forRoot()
+  AccordionModule.forRoot(),
+   ChartsModule
   ],
   /**
    * Expose our Services and Providers into Angular's dependency injection.

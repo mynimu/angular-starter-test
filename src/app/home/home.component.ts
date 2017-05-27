@@ -34,6 +34,21 @@ export class HomeComponent implements OnInit {
    * Set our default values
    */
   public localState = { value: '' };
+
+public pieChartLabels:string[] = ['Download Sales', 'In-Store Sales', 'Mail Sales'];
+  public pieChartData:number[] = [300, 500, 100];
+  public pieChartType:string = 'pie';
+
+  // events
+  public chartClicked(e:any):void {
+    console.log(e);
+  }
+
+  public chartHovered(e:any):void {
+    console.log(e);
+}
+
+
   /**
    * TypeScript public modifiers
    */
@@ -54,4 +69,7 @@ export class HomeComponent implements OnInit {
     this.appState.set('value', value);
     this.localState.value = '';
   }
+
+
+  
 }
