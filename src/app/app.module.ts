@@ -30,13 +30,7 @@ import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-// RECOMMENDED (doesn't work with system.js)
 import { AccordionModule } from 'ngx-bootstrap/accordion';
-// or
-//import { AccordionModule } from 'ngx-bootstrap';
-
-//import '../styles/styles.scss';
-//import '../styles/headings.css';
 
 // Application wide providers
 const APP_PROVIDERS = [
