@@ -29,8 +29,10 @@ import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
 
-import '../styles/styles.scss';
-import '../styles/headings.css';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
+//import '../styles/styles.scss';
+//import '../styles/headings.css';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -63,7 +65,8 @@ type StoreType = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
+    BsDropdownModule.forRoot()
   ],
   /**
    * Expose our Services and Providers into Angular's dependency injection.

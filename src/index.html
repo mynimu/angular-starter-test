@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap -->
+<!--    <link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
   <title><%= htmlWebpackPlugin.options.title %></title>
 
@@ -14,6 +17,11 @@
   <%= webpackConfig.htmlElements.headTags %>
   <% } %>
 
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
   <!-- base url -->
   <base href="<%= htmlWebpackPlugin.options.metadata.baseUrl %>">
 
@@ -22,12 +30,14 @@
 </head>
 
 <body>
+  <!-- Enable bootstrap 4 theme -->
+  <script>window.__theme = 'bs4';</script>
 
   <app>
     Loading...
   </app>
 
-  <!-- Google Analytics: change UA-71073175-1 to be your site's ID -->
+  <!-- Google Analytics: change UA-71073175-1 to be your site's ID 
   <script>
     (function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=r;A[l]=A[l]||function(){
     (A[l].q=A[l].q||[]).push(arguments)},A[l].l=1*new Date();a=n.createElement(g),
@@ -36,12 +46,45 @@
 
     ga('create', 'UA-71073175-1', 'auto');
     ga('send', 'pageview');
-  </script>
+  </script>-->
 
   <% if (htmlWebpackPlugin.options.metadata.isDevServer && htmlWebpackPlugin.options.metadata.HMR !== true) { %>
   <!-- Webpack Dev Server reload -->
   <script src="/webpack-dev-server.js"></script>
   <% } %>
 
+TEST
+<div>
+
+
+
+
+    <accordion>
+      <accordion-group heading="Static Header, initially expanded">
+        This content is straight in the template.
+      </accordion-group>
+      <accordion-group #group>
+        <div accordion-heading>
+          I can have markup, too!
+          <i class="pull-right float-xs-right glyphicon"
+             [ngClass]="{'glyphicon-chevron-down': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
+        </div>
+        This is just some content to illustrate fancy headings.
+      </accordion-group>
+      <accordion-group heading="Content 1">
+        <p>Content 1</p>
+      </accordion-group>
+      <accordion-group heading="Content 2">
+        <p>Content 2</p>
+      </accordion-group>
+    </accordion>
+
+
+
+
+
+</div>
+
+  
 </body>
 </html>
