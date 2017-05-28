@@ -42,6 +42,16 @@ import { AppState } from './app.service';
 
 
 <br/>
+
+
+    <tabset [justified]="true">
+      <tab heading="Justified">Justified content</tab>
+      <tab heading="SJ">Short Labeled Justified content</tab>
+      <tab heading="Long Justified">Long Labeled Justified content</tab>
+    </tabset>
+
+
+
 <br/>
 <br/>
 

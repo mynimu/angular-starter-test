@@ -31,6 +31,7 @@ import { XLargeDirective } from './home/x-large';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -64,7 +65,7 @@ type StoreType = {
     FormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
-    BsDropdownModule.forRoot(),
+    BsDropdownModule.forRoot(),TabsModule.forRoot(),
   AccordionModule.forRoot()
   ],
   /**
