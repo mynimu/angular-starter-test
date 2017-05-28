@@ -32,6 +32,13 @@ import { XLargeDirective } from './home/x-large';
 import '../styles/styles.scss';
 import '../styles/headings.css';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdSliderModule, MdRadioModule, MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule,MdProgressSpinnerModule } from '@angular/material';
+
+// Material 2
+import { MaterialModule } from '@angular/material';
+import 'hammerjs';
+
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
@@ -63,7 +70,13 @@ type StoreType = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
+     BrowserAnimationsModule,
+    MdButtonModule,
+    MdMenuModule,
+    MdCardModule,
+    MdToolbarModule,
+    MdIconModule,MdProgressSpinnerModule,MdRadioModule, MdSliderModule
   ],
   /**
    * Expose our Services and Providers into Angular's dependency injection.

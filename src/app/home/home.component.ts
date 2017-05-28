@@ -30,6 +30,10 @@ import { XLargeDirective } from './x-large';
   templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
+  public color = 'primary';
+  public mode = 'determinate';
+  public value = 50;
+
   /**
    * Set our default values
    */
@@ -43,7 +47,7 @@ export class HomeComponent implements OnInit {
   ) {}
 
   public ngOnInit() {
-    console.log('hello `Home` component');
+    console.log('hello `Home` component', this.color);
     /**
      * this.title.getData().subscribe(data => this.data = data);
      */

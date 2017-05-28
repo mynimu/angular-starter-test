@@ -7,6 +7,7 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import { AppState } from './app.service';
+import { Http } from '@angular/http';
 
 /**
  * App Component
@@ -15,11 +16,33 @@ import { AppState } from './app.service';
 @Component({
   selector: 'app',
   encapsulation: ViewEncapsulation.None,
-  styleUrls: [
-    './app.component.css'
-  ],
+   styleUrls: [
+     './app.component.css'
+   ],
   template: `
-    <nav>
+<md-toolbar color="primary">
+
+    <span>MyCompany</span>
+    <span class="example-spacer"></span>
+    <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
+    
+</md-toolbar>
+
+<md-menu #appMenu="mdMenu">
+  <button md-menu-item [routerLink]=" ['./home'] " > Home </button>
+  <button md-menu-item [routerLink]=" ['./about'] " >About</button> 
+</md-menu>
+
+
+<md-menu class="pull-right" md-align-trigger md-direction="bottom left">
+  <button md-menu-trigger>
+  <md-icon>account_circle</md-icon> Kira San</button> 
+  <span [routerLink]=" ['./about'] " ></span> 
+</md-menu>
+<ul>
+  <li *ngFor="let user of myData">{{user.name}}</li>
+</ul>
+<nav>
       <a [routerLink]=" ['./'] "
         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
         Index
@@ -62,10 +85,17 @@ export class AppComponent implements OnInit {
   public angularclassLogo = 'assets/img/angularclass-avatar.png';
   public name = 'Angular 2 Webpack Starter';
   public url = 'https://twitter.com/AngularClass';
+  public myData: Array<any>;
 
   constructor(
-    public appState: AppState
-  ) {}
+    public appState: AppState, private http: Http
+  ) {
+
+    this.http.get('https://jsonplaceholder.typicode.com/users')
+      .map((response) => response.json())
+      .subscribe((res) => this.myData = res);
+
+  }
 
   public ngOnInit() {
     console.log('Initial App State', this.appState.state);
