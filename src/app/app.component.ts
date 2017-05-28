@@ -28,11 +28,12 @@ import { AppState } from './app.service';
         Button dropdown 
       </button>
       <ul *dropdownMenu class="dropdown-menu" role="menu">
-        <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#" 
+        [routerLink]=" ['./home'] " >Home</a></li>
         <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
         <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
         <li class="divider dropdown-divider"></li>
-        <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+        <li role="menuitem"><a class="dropdown-item" [routerLink]=" ['./about'] ">About</a>
         </li>
       </ul>
     </div>
